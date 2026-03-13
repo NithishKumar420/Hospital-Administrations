@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome To </h1><br>
+        <h1>(Your Company Name)</h1><br>
+        <input type="text" placeholder="Username"></input>
+        <input type="password" placeholder="Password"></input>
+        <button onclick="loginfunction()">Login</button><br><br>
+        <a href="{{ url_for('register') }}">If you Dont'n Have An Account?</a>
+    </div>
+<script>
+    function loginfunction(){
+        window.location.href = "{{ url_for('admin_dashboard') }}";
+    }
+
+    </script>
+</body>
+</html>

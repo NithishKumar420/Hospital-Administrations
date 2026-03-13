@@ -1,0 +1,67 @@
+{% extends 'admin/adminpanel.html' %}
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/staffs.css') }}">
+
+{% endblock %}
+
+{% block content%}
+
+
+<style>
+</style>
+
+
+
+
+<h2 style="text-align:center;">Staffs</h2>
+<div class="search-container">
+    <form action="/search" method="get">
+        <input type="text" placeholder="Search by name or role..." name="query">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<div class="button-container">
+    <button class="addnew_btn"><a href="{{ url_for('admin_new_staffs') }}">Add New Staff</a></button>
+</div>
+<table>
+   <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Phone No</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for staff in staffs %}
+    <tr>
+        <td>{{ staff.staff_id }}</td>
+        <td>{{ staff.firstname }}</td>
+        <td>{{ staff.role }}</td>
+        <td>{{staff.phone_no}}</td>
+        <td>
+            <button class="edit_btn"><a href="">Edit</a></button>
+            <button class="delete_btn"><a href="">Delete</a></button>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

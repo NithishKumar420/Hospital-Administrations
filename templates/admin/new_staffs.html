@@ -1,0 +1,145 @@
+<style>
+      body{
+            margin:0;
+            padding:0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+        }
+
+        .container{
+            width: 450px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#1e3c72;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            font-weight:bold;
+            display:block;
+            margin-bottom:5px;
+        }
+
+        input, select, textarea{
+            width:100%;
+            padding:10px;
+            border-radius:6px;
+            border:1px solid #ccc;
+            font-size:14px;
+        }
+
+        input:focus, select:focus, textarea:focus{
+            outline:none;
+            border-color:#2a5298;
+        }
+
+        textarea{
+            resize:none;
+            height:70px;
+        }
+
+        .btn{
+            width:100%;
+            padding:12px;
+            background:#1e3c72;
+            color:white;
+            border:none;
+            border-radius:6px;
+            font-size:16px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#2a5298;
+        }
+
+</style>
+
+{% extends 'admin/adminpanel.html' %}
+
+{% block content%}
+
+<body>
+
+<div class="container">
+    <h2>Add New Staff</h2>
+
+  <form method="POST" action="{{ url_for('add_staff') }}">
+
+        <div class="input-group">
+            <label>First Name</label>
+            <input type="text" name="firstname" placeholder="Enter First Name">
+        </div>
+
+        <div class="input-group">
+            <label>Last Name</label>
+            <input type="text" name="lastname" placeholder="Enter Last Name">
+        </div>
+
+        <div class="input-group">
+            <label>Role</label>
+            <select name="role">
+                <option>Select Role</option>
+                <option>Doctor</option>
+                <option>Nurse</option>
+                <option>Receptionist</option>
+                <option>Admin</option>
+            </select>
+        </div>
+
+        <div class="input-group">
+            <label>Email ID</label>
+            <input type="email" name="email" placeholder="Enter Email">
+        </div>
+
+        <div class="input-group">
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter Password">
+        </div>
+
+        <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone_no" placeholder="Enter Phone Number">
+        </div>
+
+        <div class="input-group">
+            <label>Alternate Number</label>
+            <input type="text" name="alternate_no" placeholder="Enter Alternate Number">
+        </div>
+
+        <div class="input-group">
+            <label>Address</label>
+            <textarea name="address" placeholder="Enter Address"></textarea>
+        </div>
+
+        <div class="input-group">
+            <label>Aadhaar Number</label>
+            <input type="text" name="aadhar_no" placeholder="Enter Aadhaar Number">
+        </div>
+
+        <div class="input-group">
+            <label>PAN Number</label>
+            <input type="text" name="pan_no" placeholder="Enter PAN Number">
+        </div>
+
+        <button type="submit" class="btn">Add Staff</button>
+
+    </form>
+</div>
+
+</body>
+
+{% endblock %}
+

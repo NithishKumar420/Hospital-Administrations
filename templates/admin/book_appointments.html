@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/book_appointments.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Hospital Appointment Form</h2>
+
+    <form method="post">
+    <label for="patient_name">Patient Name</label>
+    <input type="text" id="patient_name" name="patient_name" required>
+    <label for="email">Gmail</label>
+    <input type="email" id="email" name="email" required>
+
+<label>Select Doctor</label>
+<select name="doctor" required>
+    <option value="">-- Select Doctor --</option>
+
+    {% for doctor in doctors %}
+        <option value="{{ doctor.id }}">
+            Dr. {{ doctor.full_name }}
+        </option>
+    {% endfor %}
+</select>
+    <label for="appointment_date">Appointment Date</label>
+    <input type="date" id="appointment_date" name="appointment_date" required>
+    <label for="appointment_time">Appointment Time</label>
+    <input type="time" id="appointment_time" name="appointment_time" required>
+
+    <textarea name="message"></textarea>
+
+    <button type="submit">Submit</button>
+
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/registration.css') }}">
+
+    <style>
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome To </h1><br>
+        <h1>(Your Company Name)</h1><br>
+        <input type="text" placeholder="Gmail or phone"></input>
+        <input type="password" placeholder="Password"></input>
+        <input type="password" placeholder="Confirm Password"></input>
+        <button onclick="registrationfunction()">Register</button><br><br>
+        <a href="{{ url_for('existinguser') }}">Already Have An Account?</a>
+    </div>
+<script>
+    function registrationfunction(){
+        window.location.href = "{{ url_for('registration') }}";
+    }
+    </script>
+</body>
+</html>

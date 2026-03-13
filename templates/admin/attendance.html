@@ -1,0 +1,100 @@
+{% extends 'admin/adminpanel.html' %}
+{% block content %}
+
+<style>
+.navbanner{
+    height: 60px;
+    width: 100%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbanner h1{
+    color: white;
+    font-size: 30px;
+}
+
+.attendancefeild{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* space between input and button */
+}
+
+.attendancefeild input{
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.attendancefeild button{
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 30px auto;
+        }
+
+th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+th {
+            background-color: #1e1e2f;
+            color: white;
+        }
+
+tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+tr:hover {
+            background-color: #ddd;
+        }
+</style>
+
+<div class="navbanner">
+   <h1>Attendance</h1>
+</div>
+
+<div class="attendancefeild">
+    <form method="POST" style="display:flex; gap:10px;">
+        <input type="text" name="staff_id" placeholder="Enter Staff ID" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<div class="attendancetable">
+    <table>
+        <tr>
+            <th>Staff ID</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for record in attendance_records %}
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends 'admin/adminpanel.html' %}
+{% block content %}
+<style>
+    button{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 10px;
+    }
+    button:hover{
+        background-color: rgb(255, 255, 255);
+        color: black;
+    }
+    a{
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
+    a:hover{
+        color: rgb(0, 0, 0);
+    }
+
+    textarea{
+        width: 95%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+        overflow: hidden;
+        height: 50%;
+    }
+    p{
+        font-size: 30px;
+        margin-top: 20px;
+        color: red;
+    }
+
+    
+    </style>
+    <div>
+    <p>To change the about us content, please use the form below:</p>
+    <button>About Us</button>
+    <form class = "edit-about-us-form" method="POST">
+    <textarea name="abt_content" rows="6" placeholder="Enter Your Contents"></textarea>
+    <br>
+    <button type="submit">Update</button>
+    </form>
+    </div>
+
+    <p>To change the address, please use the form below:</p>
+    <button>Address</button>
+    <form class="edit-address-form" method="POST">
+        <textarea name="address" rows="4" placeholder="Enter Address"></textarea>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <p>To change the contact information, please use the form below:</p>
+    <button>Contact</button>
+    <form class="edit-contact-form" method="POST">
+        <textarea name="contact_1" rows="2" placeholder="Enter Primary Contact"></textarea>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <p>To change the alternate contact information, please use the form below:</p>
+    <button>Alternate Contact</button>
+    <form class="edit-alternate-contact-form" method="POST">
+        <textarea name="contact_2" rows="2" placeholder="Enter Alternate Contact"></textarea>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <p>To change the Gmail content, please use the form below:</p>
+    <button>Gmail</button>
+    <form class="edit-gmail-form" method="POST">
+        <textarea name="email" rows="2" placeholder="Enter Gmail"></textarea>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+
+{% endblock %}

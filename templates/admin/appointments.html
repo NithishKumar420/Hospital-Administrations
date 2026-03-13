@@ -1,0 +1,45 @@
+{% extends 'admin/adminpanel.html' %}
+{% block page_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/staffs.css') }}">
+{% endblock %}
+
+{% block content%}
+<style>
+</style>
+<h2 style="text-align:center;"> Appointments</h2>
+<div class="search-container">
+    <form action="/search" method="get">
+        <input type="text" placeholder="Search by name or role..." name="query">
+        <button type="submit">Search</button>
+    </form>
+</div>
+<table>
+   <tr>
+        <th>P.ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Symptoms</th>
+    </tr>
+
+   {% for appointment in appointments %}
+    <tr>
+        <td>{{ appointment.id }}</td>
+        <td>{{ appointment.patient_name }}</td>
+        <td>{{ appointment.email }}</td>
+        <td>{{ appointment.doctor_name }}</td>
+        <td>{{ appointment.appointment_date }}</td>
+        <td>{{ appointment.appointment_time }}</td>
+        <td>{{ appointment.symptoms }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+{% if appointments|length == 0 %}
+    <p style="text-align:center;">No appointments found.</p>
+
+{% endif %}
+
+{% endblock %}

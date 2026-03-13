@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/adminpanel.css') }}">
+    {% block page_css %}{% endblock %}
+</head>
+<style>
+</style>
+<script>
+    function dashboardfunction(){
+        window.location.href = "{{ url_for('admin_dashboard') }}"
+    }
+    function appointmentsfunction(){
+        window.location.href = "{{ url_for('admin_appointments') }}"
+
+    }
+    function doctorsfunction(){
+        window.location.href = "{{ url_for('admin_staffs') }}"
+    }
+    function usersfunction(){
+        window.location.href = "{{ url_for('admin_users') }}"
+    }
+    function settingsfunction(){
+        window.location.href = "{{ url_for('admin_settings') }}"
+    }
+    function logoutfunction(){
+        window.location.href = "{{ url_for('web_login') }}"
+    }
+    function websettingsfunction(){
+        window.location.href = "{{ url_for('websettings') }}"
+    }
+    function attendancefunction(){
+        window.location.href = "{{ url_for('admin_attendance') }}"
+    }
+
+</script>
+<body>
+    
+    <div class="navbar">
+        <button onclick="dashboardfunction()">Dashboard</button>
+        <button onclick="appointmentsfunction()">APPOINMENTS</button>
+        <button onclick="doctorsfunction()">DOCTORS & STAFFS</button>
+        <button onclick="usersfunction()">USERS</button>
+        <button onclick="settingsfunction()">SETTINGS</button>
+        <button onclick="websettingsfunction()">WEB SETTINGS</button>
+        <button onclick="attendancefunction()">ATTENDANCE</button>
+
+        
+        <div class="logout">
+        <button onclick="logoutfunction()">🔓</button><br>
+        </div>
+    </div>
+    <div>
+    </div>
+    {% block content%}
+
+    {% endblock %}
+</body>
+</html>
+
+
+

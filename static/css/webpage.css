@@ -1,0 +1,105 @@
+    body{
+        padding: 0%;
+        margin: 0%;
+    }
+    .header{
+        position: sticky;
+        top: 0;
+        height: 14vh;
+        background-color: black;
+        display: flex;
+        justify-content: end;   
+        align-items: center;
+    }
+    .header a{
+        text-decoration: none;
+        color: white;
+        font-size: 20px;
+        margin: 0 20px;
+        
+    }
+    .body{
+        height: 72vh;
+        background-color: rgb(255, 255, 255);
+        align-items: center;
+        justify-content: center;
+    }
+    .main{
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        align-items: center;     /* Center vertically */
+    }
+    .container{
+        display: flex;
+        flex-direction: row;    /* horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 20px;              /* space between cards */
+    }
+
+    .card{
+        transition: 0.5s ease;
+        cursor: pointer;;
+    }
+    .container:hover > :not(:hover){
+        opacity: 0.3;
+        
+    }
+    .card:hover{
+        transform: scale(1.1);
+    }
+    .card img{
+       width: 150px;
+       height: auto;
+       border-radius: 8px;
+    }
+
+    .footer {
+    background-color: #000000;
+    color: white;
+    padding: 50px 20px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-box {
+    width: 220px;
+}
+
+.footer-box h3 {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ffffff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding-top: 15px;
+}
