@@ -77,6 +77,15 @@ def admin_attendance():
 def admin_users():
     return render_template('admin/users.html')
 
+##admin panel add users button
+@app.route('/admin/add_users')
+def admin_new_users():
+    return render_template('admin/add_users.html')
+
+
+
+
+
 ##admin panel staffs pages
 
 @app.route('/admin/staffs')
