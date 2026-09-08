@@ -1,3 +1,4 @@
+import os
 from flask import Flask, render_template, redirect, url_for , request 
 from datetime import date, datetime
 from models import add_staffs, book_appointments,websitesettings,db
@@ -26,7 +27,7 @@ def generate_staff_id(role):
 
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/hospitals'
+app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+pymysql://{os.environ.get('MYSQLUSER')}:{os.environ.get('MYSQLPASSWORD')}@{os.environ.get('MYSQLHOST')}:{os.environ.get('MYSQLPORT')}/{os.environ.get('MYSQLDATABASE')}"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db.init_app(app)
